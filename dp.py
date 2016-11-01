@@ -1,7 +1,7 @@
 from functools import lru_cache
 def optimal_events(ev):
     def evtuple(t, pos):
-        return (t,) if t >= 1 and ev[t-1] == pos else tuple()
+        return (t,) if t >= 1 and ev[t-1] == pos else ()
     @lru_cache(maxsize=None)
     def mevents(t, pos):
         if t == len(ev):
