@@ -1,0 +1,80 @@
+% use "xelatex -shell-escape report.tex" to compile
+\documentclass[titlepage,12pt]{article}
+\usepackage{fontspec}
+\usepackage{minted}
+\setminted{linenos,fontsize=\scriptsize}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin=25mm]{geometry}
+
+\title{\textbf{Dynamic Programming Project} \\ {\small Report for \emph{CSCI-406:
+Algorithms} with Dr.~Dinesh Mehta}}
+\author{%
+    Peter Palumbo \\ {\small\texttt{ppalumbo@mines.edu}} \\[12pt]
+    Jack Rosenthal \\ {\small\texttt{jrosenth@mines.edu}} \\[12pt]
+    Paul Sattizahn \\ {\small\texttt{psattiza@mines.edu}} \\
+}
+\date{4 November 2016}
+
+\setlength\parindent{0pt}
+\setlength\parskip{6pt plus 2pt minus 2pt}
+\let\ge=\geqslant
+\let\le=\leqslant
+
+\begin{document}
+
+\maketitle
+\section{Introduction}
+
+%TODO: brief (one paragraph) introduction to the problem
+
+\section{Recursive Formulation}
+
+\begin{itemize}
+    \item Let $\mathtt{evset}_p\{t\}$ denote the set containing only $t$ if an event
+        at time $t$ occurs at coordinate $p$, otherwise the empty set.
+    \item Let $n$ denote the number of events to occur.
+    \item Let $c$ denote the coordinate of the last event.
+    \item Let $P(t, x)$ be the predicate $n - t \ge x - c$.
+\end{itemize}
+
+Our recursive formulation for the maximum observable events subset, $m(t, p)$
+where $t$ is the current time and $p$ is the current coordinate, is as
+follows.
+
+\begin{displaymath}
+    m(t, p) = \mathtt{evset}_p\{t\}\, \cup\,
+    \begin{cases}
+        \emptyset & \text{if}\ t = n \\
+        \text{max}_{\text{length}} \left\{m(t + 1, x) :
+        x \in \left\{p - 1, p, p + 1\right\} | P(t, x)
+        \right\} & \text{otherwise}
+    \end{cases}
+\end{displaymath}
+
+Using the above recursive formula, the maximum observable events subset for the
+problem presented is $m(0, 0)$.
+
+\subsection{Explanation}
+
+%TODO
+
+\subsection{Recurrence Relation}
+
+%TODO
+
+\subsection{Algorithmic Complexity}
+
+%TODO: explain why it's O(n^2)
+
+\section{Implementation}
+
+Our implementation in the \emph{Python} programming language is as follows:
+
+\inputminted{python3}{dp.py}
+
+\subsection{Examples}
+
+%TODO: examples
+
+\end{document}
