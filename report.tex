@@ -7,7 +7,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-\usepackage[margin=25mm]{geometry}
+\usepackage[margin=27mm]{geometry}
 
 \title{\textbf{Dynamic Programming Project} \\ {\small Report for \emph{CSCI-406:
 Algorithms} with Dr.~Dinesh Mehta}}
@@ -31,8 +31,8 @@ Algorithms} with Dr.~Dinesh Mehta}}
 This report describes our group's dynamic programing solution to a particular
 algorithic problem: given a list of events occuring at times $1,\ldots,n$ find
 a viewable subset of the events including the last event. The viewer starts at
-$\text{time}=0$ and $\text{position}=0$ and has the choice to move at most 1
-position for each time step.
+time 0 and position 0 and has the choice to move at most 1 position for each
+time step.
 
 \section{Recursive Formulation}
 
@@ -68,7 +68,7 @@ calls for which a solution would be impossible.
 
 \begin{figure}[H]
     \begin{center}
-    \includegraphics[width=0.5\linewidth]{dp_recursive}
+    \includegraphics[width=0.4\linewidth]{dp_recursive}
     \end{center}
     \caption{A tree showing the calls of our recursive formula. The
     labels on the nodes show the position of the telescope.}
@@ -79,12 +79,12 @@ calls for which a solution would be impossible.
 
 It is easy to notice that subtrees in Figure~\ref{fig:recursive} will repeat
 frequently in solving the problem. This is illustrated in Figure~\ref{fig:red};
-the edges marked in red indicate subtrees whice have already been computed and
+the edges marked in red indicate subtrees which have already been computed and
 an intermediate stored result can be used rather that recomputing the subtree.
 
 \begin{figure}[H]
     \begin{center}
-    \includegraphics[width=0.5\linewidth]{dp_red}
+    \includegraphics[width=0.4\linewidth]{dp_red}
     \end{center}
     \caption{The same tree as in Figure~\ref{fig:recursive}. Red edges indicate the
     subtrees that the intermediate result can be stored.}
