@@ -1,6 +1,7 @@
 % use "xelatex -shell-escape report.tex" to compile
 \documentclass[titlepage,12pt]{article}
 \usepackage{lmodern}
+\usepackage{graphicx}
 \usepackage{minted}
 \setminted{linenos,fontsize=\scriptsize}
 \usepackage{amsmath}
@@ -62,7 +63,14 @@ problem presented is $m(0, 0)$.
 
 \subsection{Explanation}
 
-%TODO
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=0.5\linewidth]{dp_recursive}
+    \end{center}
+    \label{recursive}
+    \caption{A tree showing the calls of our recursive formula. The
+    labels on the nodes show the position of the telescope.}
+\end{figure}
 
 \subsection{Recurrence Relation}
 
