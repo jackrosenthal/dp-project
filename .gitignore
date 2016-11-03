@@ -3,3 +3,4 @@ _minted*
 report.pdf
 *.log
 *.aux
+examples.tex
