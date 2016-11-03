@@ -61,7 +61,10 @@ follows:
 Using the above recursive formula, the maximum observable events subset for the
 problem presented is $m(0, 0)$.
 
-\subsection{Explanation}
+As seen in Figure~\ref{fig:recursive}, this recursive formula can get
+expensive. Up to 3 calls of $m$ may be required for each call of $m$ until the
+base case is reached. Fortunately, the predicate $P(t, x)$ prevents making
+calls for which a solution would be impossible.
 
 \begin{figure}[H]
     \begin{center}
@@ -73,6 +76,11 @@ problem presented is $m(0, 0)$.
 \end{figure}
 
 \subsection{Recurrence Relation}
+
+It is easy to notice that subtrees in Figure~\ref{fig:recursive} will repeat
+frequently in solving the problem. This is illustrated in Figure~\ref{fig:red};
+the edges marked in red indicate subtrees whice have already been computed and
+an intermediate stored result can be used rather that recomputing the subtree.
 
 \begin{figure}[H]
     \begin{center}
