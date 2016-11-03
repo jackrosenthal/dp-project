@@ -46,7 +46,7 @@ position for each time step.
 
 Our recursive formulation for the maximum observable events subset, $m(t, p)$
 where $t$ is the current time and $p$ is the current coordinate, is as
-follows.
+follows:
 
 \begin{displaymath}
     m(t, p) = \mathtt{evset}_p\{t\}\, \cup\,
@@ -67,14 +67,21 @@ problem presented is $m(0, 0)$.
     \begin{center}
     \includegraphics[width=0.5\linewidth]{dp_recursive}
     \end{center}
-    \label{recursive}
     \caption{A tree showing the calls of our recursive formula. The
     labels on the nodes show the position of the telescope.}
+    \label{fig:recursive}
 \end{figure}
 
 \subsection{Recurrence Relation}
 
-%TODO
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=0.5\linewidth]{dp_red}
+    \end{center}
+    \caption{The same tree as in Figure~\ref{fig:recursive}. Red edges indicate the
+    subtrees that the intermediate result can be stored.}
+    \label{fig:red}
+\end{figure}
 
 \subsection{Psuedocode}
 
