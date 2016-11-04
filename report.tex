@@ -137,7 +137,8 @@ these two bounds together gives the formulation
     \sum_{i=0}^{\left\lceil \frac{n}{2} \right\rceil} (2i + 1) +
     \sum_{j=0}^{\left\lfloor \frac{n}{2} \right\rfloor} (2j + 1) =
     {\left\lceil\frac{n}{2}\right\rceil}^2 +
-    {\left\lfloor\frac{n}{2}\right\rfloor}^2 \le n^2
+    {\left\lfloor\frac{n}{2}\right\rfloor}^2 =
+    \left\lceil{\frac{n^2}{2}}\right\rceil \le n^2
 \end{displaymath}
 as the number of nodes to visit. This leaves us with a worst-case algorithmic
 complexity of $O(n^2)$.
