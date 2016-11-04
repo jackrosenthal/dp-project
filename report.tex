@@ -135,7 +135,7 @@ number of nodes at that time will also be bounded by $2(n - t) + 1$. Putting
 these two bounds together gives the formulation
 \begin{displaymath}
     \sum_{i=0}^{\lceil \frac{n}{2} \rceil} (2i + 1) +
-    \sum_{j=0}^{\lfloor \frac{n}{2} \rfloor} (2j + 1) = n^2
+    \sum_{j=0}^{\lfloor \frac{n}{2} \rfloor} (2j + 1) \le n^2
 \end{displaymath}
 as the number of nodes to visit. This leaves us with a worst-case algorithmic
 complexity of $O(n^2)$.
