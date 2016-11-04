@@ -7,6 +7,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
 \usepackage[margin=27mm]{geometry}
 
 \title{\textbf{Dynamic Programming Project} \\ {\small Report for \emph{CSCI-406:
@@ -91,9 +94,31 @@ an intermediate stored result can be used rather that recomputing the subtree.
     \label{fig:red}
 \end{figure}
 
-\subsection{Psuedocode}
+\subsection{Pseudocode}
 
-\inputminted{python3}{dp.py}
+By simply storing completed function calls of $m$ in a dictionary-like
+structure, one can implement our dynamic programming method presented. An
+example of this is shown below:
+
+\begin{algorithm}
+\begin{algorithmic}
+    \State{\Comment{$D$ is a global dictionary-like structure}}
+    \Function{$m$}{$t$, $p$}
+    \If{$(t, p) \in D$}
+        \Return{$D[(t, p)]$}
+    \ElsIf{$t = n$}
+        \Return{$D[(t, p)] = \mathtt{evset}_p\{t\}$}
+    \Else
+        \State{\Return{%
+           $D[(t, p)] = \mathtt{evset}_p\{t\}\, \cup \,
+                    \text{max}_{\text{len}} \left\{m(t + 1, x) :
+                    x \in \left\{p - 1, p, p + 1\right\} | P(t, x)
+                    \right\}$
+                }}
+    \EndIf
+    \EndFunction
+\end{algorithmic}
+\end{algorithm}
 
 \subsection{Algorithmic Complexity}
 
